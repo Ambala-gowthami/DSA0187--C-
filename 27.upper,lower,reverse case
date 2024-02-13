@@ -1,15 +1,19 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
+
+bool isBuzz(int n) {
+    return (n % 7 == 0 || n % 10 == 7);
+}
+
 int main() {
-    string input;
-    cout << "Enter a string: ";
-    getline(cin, input);
-    transform(input.begin(), input.end(), input.begin(), ::toupper);
-    cout << "Uppercase: " << input << endl;
-    transform(input.begin(), input.end(), input.begin(), ::tolower);
-    cout << "Lowercase: " << input << endl;
-    reverse(input.begin(), input.end());
-    cout << "Reverse: " << input << endl;
+    int number;
+    cout << "Enter a number: ";
+    cin >> number;
+
+    if (isBuzz(number))
+        cout << number << " is a buzz number." << endl;
+    else
+        cout << number << " is not a buzz number." << endl;
+
     return 0;
 }
